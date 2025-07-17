@@ -2,6 +2,8 @@
 """
 SensoGlove DK3 Gesture Recorder
 
+ONLY WORKS ON WINDOWS, NOT ROS
+
 This script captures and saves hand gestures from the SensoGlove DK3
 for later use with robot hands or other applications.
 """
