@@ -8,28 +8,29 @@ class InspireHandCommander(Node):
     def __init__(self):
         super().__init__('inspire_hand_commander')
 
-        # Check actual topic name used by driver
+        # Publisher to the driver
         self.publisher_ = self.create_publisher(JointTrajectory, '/inspire_hand/joint_trajectory', 10)
 
-        # Wait a bit longer for subscribers
-        self.timer = self.create_timer(2.0, self.send_command)
+        # Send a trajectory after short delay to allow subscriber to connect
+        self.timer = self.create_timer(5.0, self.send_command)
 
     def send_command(self):
         msg = JointTrajectory()
-
-        # If unsure, try leaving joint_names empty
+        
+        # Optional: joint names (can be empty unless Inspire driver expects them)
         msg.joint_names = ['joint1', 'joint2', 'joint3', 'joint4', 'joint5', 'joint6']
-        # msg.joint_names = []
 
+        # Create one point with 6 position values
         point = JointTrajectoryPoint()
-        point.positions = [1.0, 1.5, 2.0, 2.5, 1.0, 1.5]  # Values in radians if expected
-        point.time_from_start.sec = 1
-
+        #point.positions = [100.0, 150.0, 200.0, 250.0, 100.0, 150.0]
+        point.positions = [1.0, 0.0, 0.0, 1.0, 0.50, 1.0]
+        point.time_from_start.sec = 1  # Optional
+        
         msg.points.append(point)
-        self.publisher_.publish(msg)
 
+        self.publisher_.publish(msg)
         self.get_logger().info('Sent joint trajectory command')
-        self.timer.cancel()
+        self.timer.cancel()  # Only send once
 
 def main(args=None):
     rclpy.init(args=args)
