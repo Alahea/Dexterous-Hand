@@ -1,5 +1,6 @@
 # ml_classifier.py
 # Receives EMG via UDP, predicts gesture, sends gesture via UDP to visualizer
+# not optimized
 
 import socket
 import os
