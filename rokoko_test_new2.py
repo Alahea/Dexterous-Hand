@@ -1,6 +1,3 @@
-# angles tuned for test1
-
-
 import rclpy
 from rclpy.node import Node
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
@@ -146,7 +143,7 @@ class CSVToInspireHand(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    node = CSVToInspireHand('optimized_motion_pipeline.csv', frame_rate=100)
+    node = CSVToInspireHand('test1-3.csv', frame_rate=100)
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()
