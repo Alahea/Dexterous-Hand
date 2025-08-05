@@ -1,6 +1,5 @@
 # Dexterous-Hand ROS2
-
-## to run this system, make to have to following: 
+ to run this system, make to have to following: 
 
 # EMG
 ## follow the steps of libEMG at https://github.com/armlabstanford/libemg-ros/tree/main
