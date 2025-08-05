@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#reads directly from the csv files
+
 
 import rclpy
 from rclpy.node import Node
