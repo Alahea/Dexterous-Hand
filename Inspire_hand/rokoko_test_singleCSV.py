@@ -1,3 +1,5 @@
+#simialr to the EMG_to_inspire but this only reads a single csv file, good for a continuius task coming from a single csv file
+
 import rclpy
 from rclpy.node import Node
 from trajectory_msgs.msg import JointTrajectory, JointTrajectoryPoint
