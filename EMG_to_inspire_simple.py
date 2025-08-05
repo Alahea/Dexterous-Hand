@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+#sample code to do a certain pose, adjasent to the EMG_to_inspire
+
 
 import rclpy
 from rclpy.node import Node
