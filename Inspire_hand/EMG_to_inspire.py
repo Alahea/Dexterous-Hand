@@ -30,10 +30,10 @@ class EMGToInspireMultiCSV(Node):
 
         # Gesture → CSV mapping
         self.csv_map = {
-            1: 'optimized_motion_pipeline.csv',
-            2: 'test1-2-1.csv',
-            3: 'test1-3.csv',
-            4: 'test1-3.csv'
+            1: 'test3-10.csv',
+            2: 'test3-11.csv',
+            3: 'test3-12.csv',
+            4: 'test3-12.csv'
         }
 
         self.frame_rate = 100
@@ -54,12 +54,14 @@ class EMGToInspireMultiCSV(Node):
         else:
             self.calibration = None
         # test 1: grasping cube
-        self.min_closure = [0.1, 0.4, 0.5, 0.4, 0.4, 0.0]
-        self.max_open = [0.8, 0.7, 0.9, 1.0, 1.0, 0.0]
+        #self.min_closure = [0.1, 0.4, 0.5, 0.4, 0.4, 0.0]
+        #self.max_open = [0.8, 0.7, 0.9, 1.0, 1.0, 0.0]
         #test 2: pinching coin
         #self.min_closure = [0.1, 0.4, 0.2, 0.15, 0.4, 0.0]  # minimum closed position per finger
         #self.max_open = [0.8, 0.7, 0.9, 1.0, 0.5, 0.0]
-
+        #test 3: sliding card
+        self.min_closure = [0.3, 0.3, 0.0, 0.0, 0.1, 0.0]  # minimum closed position per finger
+        self.max_open = [0.8, 0.7, 0.9, 0.80, 0.5, 0.0]     # maximum open position per finger
         self.get_logger().info("EMG to Inspire multi-CSV node started.")
 
     def normalize_with_calibration(self, angle, dof):
