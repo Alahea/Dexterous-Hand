@@ -15,10 +15,14 @@ Here is how to train the gForcePro Oymotion Armband:
    We are using the random forest model to train data.
 6. EMG_live_classifier.py
    This will both visualize the tranined guestures while also publishing it to ROS.
+   Note: keep this running since it's needed to publish guestures to inspire hand
 
 ## ROKOKO Smartglove Setup
 Recommended to use Mac or Windows for faster processing.
 A 5G internet connection can significantly improve the setup and data transmission speed.
 
 # Controlling the Inspire Hand
-communication with the inspire hand is done through inspire_hand_listener.py
+communication with the inspire hand is done through inspire_hand_listener.py, this is establishing communication with both EMG and the Inspire hand, waiting for any published data. 
+1. Run inspire_hand_listener.py and keep running while publishing commands.
+2. For sample test, run EMG_to_inspire.py. This is publishing gusture commands to the listener for the task of sliding a card. 
+
