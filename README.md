@@ -26,3 +26,37 @@ communication with the inspire hand is done through inspire_hand_listener.py, th
 1. Run inspire_hand_listener.py and keep running while publishing commands.
 2. For sample test, run EMG_to_inspire.py. This is publishing gusture commands to the listener for the task of sliding a card. 
 
+**Workflow:**
+1. **Record a task** with the ROKOKO Smartglove.  
+   - Record each phase of the task separately **or** record the entire dataset and split into phases later.  
+2. **Save Smartglove data** as a CSV file.  
+   - Streaming via IP address is also supported.  
+3. **Train EMG data** in the following order:  
+   - UDP Data Collector → Feature Extractor → Train → Live Classify  
+4. **Run the Inspire Hand listener** to enable communication with the Inspire Robot.  
+5. Use examples in the `inspire_hand` directory for testing.
+
+---
+
+## Quickstart
+
+Minimal steps to get started:
+
+```bash
+# 1. Collect EMG Data
+python3 EMG_udp_collector.py
+
+# 2. Extract Features
+python3 EMG_feature_extractor.py
+
+# 3. Train Model
+python3 EMG_train_model.py
+
+# 4. Run Live Classifier (keep running)
+python3 EMG_live_classifier.py
+
+# 5. Start Inspire Hand Listener (keep running)
+python3 inspire_hand_listener.py
+
+# 6. Run Example Gesture-to-Inspire Command
+python3 EMG_to_inspire.py
