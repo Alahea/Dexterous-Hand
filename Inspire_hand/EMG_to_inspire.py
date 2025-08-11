@@ -32,10 +32,10 @@ class EMGToInspireMultiCSV(Node):
 
         # Gesture → CSV mapping
         self.csv_map = {
-            1: 'test3-10.csv',
-            2: 'test3-11.csv',
-            3: 'test3-12.csv',
-            4: 'test3-12.csv'
+            1: 'task3-1.csv',
+            2: 'task3-2.csv',
+            3: 'task3-2.csv',
+            4: 'task3-3.csv'
         }
 
         self.frame_rate = 100
