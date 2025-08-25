@@ -8,12 +8,13 @@ Before running the system, ensure the following components are set up:
 Follow the installation steps for libEMG: libemg-ros on GitHub
 Note: A different training method will be used in this project, but completing the libEMG installation is recommended. Some packaged might need to be modified depending the system you are using.
 Here is how to train the gForcePro Oymotion Armband:
-1. EMG_udp_collector.py
+a. Establish connection and communication with the EMG device (bluetooth)
+b. 1. EMG_udp_collector.py
     Note: for best results, collect within the range [15,000, 25,000] the higher the data is for each guesture the better the training will be. When recording each guesture, make sure to have the EMG Armband as high on the forearm as possible. Keeping each muscle steady when recording is also recommended.
-3. EMG_feature_extractor.py
-4. EMG_train_model.py
+    2. EMG_feature_extractor.py
+    3. EMG_train_model.py
    We are using the random forest model to train data.
-6. EMG_live_classifier.py
+    4. EMG_live_classifier.py
    This will both visualize the tranined guestures while also publishing it to ROS.
    Note: keep this running since it's needed to publish guestures to inspire hand
 
